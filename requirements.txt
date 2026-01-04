@@ -1,0 +1,13 @@
+dash
+dash-bootstrap-components
+dash-mantine-components
+python-dotenv
+
+langchain
+langchain-community
+langchain-core
+langchain-google-genai
+
+faiss-cpu
+pypdf
+google-generativeai

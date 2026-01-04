@@ -1,0 +1,296 @@
+:root {
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0c0;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.app-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+.background-shapes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(120, 220, 255, 0.1) 0%, transparent 50%);
+}
+
+.main-container {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+/* Header Styles */
+.header-container {
+    padding: 3rem 0;
+    animation: fadeInDown 1s ease-out;
+}
+
+.gradient-text {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.display-4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.subheader {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+}
+
+/* Glass Card Effect */
+.card-glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--glass-shadow);
+    transition: all 0.3s ease;
+}
+
+.card-glass:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Upload Section */
+.upload-container {
+    padding: 2.5rem;
+}
+
+.upload-area {
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.upload-area:hover {
+    border-color: #667eea;
+    background: rgba(102, 126, 234, 0.05);
+}
+
+.upload-btn {
+    background: var(--primary-gradient);
+    border: none;
+    padding: 0.8rem 2rem;
+    font-weight: 500;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.upload-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.icon-upload {
+    color: #667eea;
+    filter: drop-shadow(0 4px 6px rgba(102, 126, 234, 0.3));
+}
+
+.upload-badge {
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Chat Interface */
+.chat-container {
+    min-height: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+}
+
+.chat-bubble {
+    margin-bottom: 1.5rem;
+    animation: slideIn 0.3s ease-out;
+}
+
+.chat-bubble.user {
+    text-align: right;
+}
+
+.user-message {
+    background: var(--primary-gradient);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 20px 20px 5px 20px;
+    display: inline-block;
+    max-width: 80%;
+    text-align: left;
+}
+
+.ai-message {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    padding: 1rem 1.5rem;
+    border-radius: 20px 20px 20px 5px;
+    display: inline-block;
+    max-width: 80%;
+    border-left: 4px solid #667eea;
+}
+
+/* Input Area */
+.input-container {
+    margin-top: 2rem;
+}
+
+.input-group-custom {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.chat-input {
+    background: transparent !important;
+    border: none !important;
+    color: var(--text-primary) !important;
+    padding: 1.25rem 1.5rem !important;
+    font-size: 1rem !important;
+}
+
+.chat-input::placeholder {
+    color: var(--text-secondary) !important;
+}
+
+.chat-input:focus {
+    box-shadow: none !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.send-btn {
+    background: var(--primary-gradient) !important;
+    border: none !important;
+    padding: 0 2rem !important;
+    font-weight: 500 !important;
+    border-radius: 0 12px 12px 0 !important;
+    transition: all 0.3s ease !important;
+}
+
+.send-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.5) !important;
+}
+
+/* Features Section */
+.feature-card {
+    padding: 1.5rem;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.feature-card:hover {
+    background: rgba(102, 126, 234, 0.1);
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    color: #667eea;
+    filter: drop-shadow(0 4px 8px rgba(102, 126, 234, 0.3));
+}
+
+/* Footer */
+.footer {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    padding: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-gradient);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2.5rem;
+    }
+    
+    .card-glass {
+        padding: 1.5rem;
+    }
+    
+    .chat-container {
+        max-height: 300px;
+    }
+    
+    .user-message, .ai-message {
+        max-width: 90%;
+    }
+}
